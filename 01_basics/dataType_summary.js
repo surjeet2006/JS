@@ -22,3 +22,21 @@ const myFunction = function(){  // Function
 
 // JavaScript is a dynamically typed language.
 // That means variables do not have a fixed type. The type is determined at runtime, and the same variable can hold different types of values.
+
+
+// ******************************* Memory ******************************
+
+// Stack --> Primitive  
+// Heap --> Non-Primitive  --> reference
+
+let user1 = {
+    email: "user@gmail.com",
+    upi: "user@ybl"
+}
+
+let user2 = user1
+
+user2.email = "raaz@gmail.com"
+
+console.log(user1.email)
+console.log(user2.email)
