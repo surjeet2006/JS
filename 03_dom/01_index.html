@@ -4,11 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: aqua;
+        }
+    </style>    
 </head>
 <body>
     <div class="bg-black">
-        <h1 class="heading">DOM learning</h1>
+        <h1 id="title" class="heading">DOM learning <span style="display: none;">by surjeet</span></h1>
+        <h2>first h2 heading</h2>
+        <h2>Second h2 heading</h2>
+        <h2>Third h2 heading</h2>
         <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
     </div>
 </body>
 </html>
@@ -22,5 +37,21 @@
                   / \
                  /   \
               Head    Body
+
+
+NodeList -> It's not actually an array but have some properties like array.
+
+HTMLCollection -> It is a built-in object that represents a live collection of HTML elements from the DOM.
+An important feature of HTMLCollection is that it's live. If the DOM changes, the collection updates automatically.
+
+HTMLCollection vs NodeList
+
+| Feature             | HTMLCollection           |   NodeList                               |
+| ------------------- | -------------------------| -----------------------------------------|
+| Live?               | ✅ Usually live          |  ❌ Usually static (`querySelectorAll`) |
+| Contains            | Only element nodes       |   Elements, text nodes, etc.             |
+| forEach() support   | ❌ No                    |  ✅ Yes                                 |
+| Convert to Array    | Array.from(collection)    |  Array.from(nodeList)                   |
+
 
 -->
