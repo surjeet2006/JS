@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Creating elements
+    const divElement = document.createElement('div')
+    console.log(divElement)
+    divElement.className = "main"
+    divElement.id = "myId"
+    
+    // divElement.innerText = "Hello Surjeet"
+    const addText = document.createTextNode("Hello Surjeet")
+    divElement.appendChild(addText)
+
+    document.body.appendChild(divElement)  // attaching divElement to document
+
+    // custom attibute
+    divElement.setAttribute("title", "title_value")
+
+    //style
+    divElement.style.backgroundColor = "aqua"
+    divElement.style.padding = "15px"
+
+</script>
+</html>
