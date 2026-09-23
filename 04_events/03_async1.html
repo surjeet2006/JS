@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async Projects</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){}, time in millisec); ==> used to run a function once after a specified delay.
+    // setTimeout() is asynchronous: JavaScript continues executing other code while waiting for the timeout.
+
+    // console.log(1)
+    // setTimeout(function(){
+    //     console.log(2)
+    // }, 0)
+    // console.log(3)
+    // Output ==> 1 -> 3 -> 2
+
+    changeText = function(){
+        document.querySelector('h1').innerHTML = "Surjeet Verma"
+    }
+
+    const timer = setTimeout(changeText, 2000)
+
+    // cancelling setTimeOut 
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(timer)
+        console.log("STOPPED!")
+    })
+
+    // passing Argument
+    function greet(name) {
+        console.log("Hello " + name);
+    }
+    setTimeout(greet, 3000, "John");
+
+</script>
+</html>

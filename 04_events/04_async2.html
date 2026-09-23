@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Raaz Verma</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(name){
+        console.log(name, Date.now());
+    }
+
+    let intervalId = null;
+
+    document.querySelector('#start').addEventListener('click', function(){
+        if(intervalId === null){
+            intervalId = setInterval(sayDate, 1000, "Raaz")
+        } 
+    });
+
+    document.querySelector("#stop").addEventListener('click', function(){
+        clearInterval(intervalId)
+        intervalId=null;
+    });
+    
+    
+
+</script>
+</html>
