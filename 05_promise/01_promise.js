@@ -23,8 +23,8 @@ new Promise(function(resolve, reject){
     console.log("Async 2 resolved")
 })
 // Output
-// promise consumed
 // Async task 2
+// Async 2 resolved
 
 
 const promiseThree = new Promise(function(resolve, reject){
