@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    XMLHttpRequest: It  is a JavaScript API used to make HTTP requests from a web page without reloading the page.
+
+    AJAX stands for Asynchronous JavaScript and XML.
+    It is a technique that allows a web page to send or receive data from a server without refreshing the entire page.
+
+    How AJAX works
+    User action
+        ↓
+    JavaScript
+        ↓
+    HTTP request → Server
+        ↓
+    Server response
+        ↓
+    JavaScript updates the page
+
+
+    AJAX isn't a specific technology. It commonly uses:
+        JavaScript — controls the request and updates the page
+
+        XMLHttpRequest (XHR) — an older API for making HTTP requests
+
+        Fetch API — the modern alternative to XHR
+
+        JSON — commonly used to exchange data between the browser and server
+    
+    XMLHttpRequest => an older way to implement AJAX
+    fetch() => modern way to implement AJAX
+    -->
+</body>
+<script>
+    const url = "https://api.github.com/users/surjeet2006"
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',url)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)  // since data is obtained in string by default 
+            console.log(data)
+            console.log(typeof data)
+            console.log(data.followers)
+        }
+    }
+    xhr.send()
+</script>
+</html>
