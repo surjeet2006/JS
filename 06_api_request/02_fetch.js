@@ -22,3 +22,22 @@ async function getAllUsers() {
     }
 }
 getAllUsers()
+
+/*
+console.log("Start");
+
+fetch("/users")
+  .then(data => console.log(data));
+
+console.log("End");
+
+
+The fetch() request can be handled asynchronously by the runtime while JavaScript continues to:
+
+OUTPUT:
+    Start
+    End
+    ...later...
+    data
+
+*/
