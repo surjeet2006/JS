@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // document.querySelector("#orange").onclick = function(){
+    //     document.body.style.backgroundColor = `orange`;
+    // }
+
+    // document.querySelector("#green").onclick = function(){
+    //     document.body.style.backgroundColor = `green`;
+    // }
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}` // will not work
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+
+    }
+    
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+
+/*
+1. ✅ Closure
+
+Flow:
+
+    page loads
+        ↓
+    clickHandler("orange") executes
+        ↓
+    creates function
+        ↓
+    function remembers color="orange"
+        ↓
+    onclick = returned function
+        ↓
+    WAIT...
+        ↓
+    user clicks
+        ↓
+    function executes
+        ↓
+    background becomes orange
+
+
+2. ❌ No returned function
+
+    function clickHandler(color) {
+        document.body.style.backgroundColor = color;
+    }
+    button.onclick = clickHandler("orange");  // immediately executes the function. So the background changes to orange when the page/code runs, not when you click the button.
+
+Flow:
+
+    page loads
+        ↓
+    clickHandler("orange") executes NOW
+        ↓
+    background becomes orange
+        ↓
+    returns undefined   ==> document.getElementById('orange').onclick = undefined;
+        ↓
+    onclick = undefined
+        ↓
+    clicking does nothing
+
+*/
+</script>
+</html>
